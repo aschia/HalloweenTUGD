@@ -1,18 +1,25 @@
+/*
+ * Player
+ * 
+ * ---
+ * Player collision and movements
+ * ---
+ * Last Edited: 10/02
+ * Edited by: aschia
+ * */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private BoxCollider2D boxColl;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        boxColl = GetComponent<BoxCollider2D>();
     }
 }
