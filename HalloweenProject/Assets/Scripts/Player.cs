@@ -3,6 +3,7 @@
  * 
  * ---
  * Player collision and movements
+ * Also eventually interaction with objects ig
  * ---
  * Last Edited: 10/02
  * Edited by: aschia
@@ -26,7 +27,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         boxColl = GetComponent<BoxCollider2D>();
-        spRend = GetComponent<SpriteRenderer>();
+        spRend = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -43,7 +44,7 @@ public class Player : MonoBehaviour
         if (moveDelta.x != 0)
         {
             newInd = 1;
-            transform.localScale = new Vector3(1 * x, 1, 1);
+            transform.GetChild(0).localScale = new Vector3(1 * x, 1, 1);
         }
         if (moveDelta.y != 0)
         {
@@ -54,7 +55,7 @@ public class Player : MonoBehaviour
         if (newInd != -1)
         {
             sprIndex = newInd;
-            Debug.Log(newInd);
+            //Debug.Log(newInd);
             spRend.sprite = moveSprites[newInd];
         }
 
