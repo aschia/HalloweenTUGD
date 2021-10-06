@@ -72,8 +72,8 @@ public class CameraActin : MonoBehaviour
 
             case (int)_CameraModes.follow:
                 // lock to position
-                transform.position = target.position;
-            break;
+                transform.position = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
+                break;
         }
     }
 
@@ -83,6 +83,7 @@ public class CameraActin : MonoBehaviour
         if (newtarget == null) {
             CameraActinSingleton.target = null;
             CameraActinSingleton.cameraMode = 0;
+            CameraActinSingleton.transform.position = new Vector3(newtarget.transform.position.x, newtarget.transform.position.y, CameraActinSingleton.transform.position.z);
             return;
         }
 
@@ -101,7 +102,7 @@ public class CameraActin : MonoBehaviour
             CameraActinSingleton.target = null;
             CameraActinSingleton.cameraMode = 0;
 
-            CameraActinSingleton.transform.position = caller.transform.position;
+            CameraActinSingleton.transform.position = new Vector3( caller.transform.position.x,caller.transform.position.y,CameraActinSingleton.transform.position.z);
 
             return;
         }

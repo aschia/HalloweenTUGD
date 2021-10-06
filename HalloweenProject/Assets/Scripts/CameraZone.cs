@@ -23,7 +23,7 @@ public class CameraZone : MonoBehaviour
     BoxCollider2D bcoll = null;                                 // the box collider for the zone
 
     public static CameraZone previousCameraZone = null;         // storage for the previously touched camera zone
-    static float TIME_REACTIVATE = 0.5f;                        // time until a previously used camera zone tries to become active again
+    static float TIME_REACTIVATE = 0.25f;                       // time until a previously used camera zone tries to become active again
 
     // Start is called before the first frame update
     void Start()
@@ -44,9 +44,11 @@ public class CameraZone : MonoBehaviour
     }
 
     // collision with player
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Collided with CameraZone");
+
+        if (other.gameObject.GetComponent<Player>() == null) return;
 
         // check to make sure this isn't a repeat interaction
         if (this != previousCameraZone || previousCameraZone == null)
