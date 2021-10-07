@@ -8,7 +8,7 @@ public class NPC : DialogueActionable
     //private SpriteRenderer spRend;
     //private int sprInd = 0;
 
-    public List<List<string>> text = null;
+    public List<Diatext> dialogueText = new List<Diatext>();
 
     public int timesTalked = 0;
 
@@ -38,7 +38,9 @@ public class NPC : DialogueActionable
 
     public void OnEnable()
     {
-        if (defaultFacePriority && spRend != null)
+        if (spRend == null) return;
+
+        if (defaultFacePriority)
         {
             if (defaultFace == 3)
             {
@@ -48,6 +50,7 @@ public class NPC : DialogueActionable
             else sprIndex = defaultFace;
             UpdateSprite();
         }
+        if (timesTalked < dialogueText.Count) timesTalked++;
     }
 
     // Update is called once per frame
@@ -82,8 +85,8 @@ public class NPC : DialogueActionable
 
             // let's start the actual text stuff
             List<string> diaText = null;
-            if (timesTalked >= text.Count) diaText = text[text.Count - 1];
-            else diaText = text[timesTalked];
+            if (timesTalked >= dialogueText.Count) diaText = dialogueText[dialogueText.Count-1].text;
+            else diaText = dialogueText[timesTalked].text;
             DialogueManager.StartDialogue(diaText, new List<GameObject>{this.gameObject,touchPlayer.gameObject});
         }
     }

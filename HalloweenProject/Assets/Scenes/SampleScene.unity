@@ -1505,15 +1505,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: text.Array.data[0]
-      value: thank you, you've freed me from an eternity of looking at this wall
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: text.Array.data[1]
-      value: jk i'm gonna keep doing it after you stop talking to me
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: text.Array.data[2]
-      value: it's a living
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: defaultFacePriority
@@ -1526,6 +1526,10 @@ PrefabInstance:
     - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: moveSprites.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: faceSprites.Array.data[0]
@@ -1551,6 +1555,22 @@ PrefabInstance:
       propertyPath: moveSprites.Array.data[2]
       value: 
       objectReference: {fileID: -5898743092609819995, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[0].text.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[0].text.Array.data[0]
+      value: Thank you! You've freed me from staring at this wall forever!
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[0].text.Array.data[1]
+      value: lol jk i'm gonna keep doing it as soon as you stop talking to me
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[0].text.Array.data[2]
+      value: it's a living
+      objectReference: {fileID: 0}
     - target: {fileID: 816474265457217444, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -9362,6 +9382,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: faceSprites.Array.data[0]
       value: 
       objectReference: {fileID: 7639128355105523608, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
@@ -9385,6 +9409,50 @@ PrefabInstance:
       propertyPath: moveSprites.Array.data[2]
       value: 
       objectReference: {fileID: -5898743092609819995, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[0].text.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[1].text.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[2].text.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[0].text.Array.data[0]
+      value: hello world
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[0].text.Array.data[1]
+      value: today is teudsay
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[1].text.Array.data[0]
+      value: hello world
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[1].text.Array.data[1]
+      value: today is still teudsay
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[1].text.Array.data[2]
+      value: is that really so suprisign
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[2].text.Array.data[0]
+      value: hello world
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[2].text.Array.data[1]
+      value: go talk to someone else
+      objectReference: {fileID: 0}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[2].text.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 816474265457217444, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: m_RootOrder
       value: 3
