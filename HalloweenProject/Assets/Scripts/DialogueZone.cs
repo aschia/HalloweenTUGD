@@ -43,11 +43,11 @@ public class DialogueZone : MonoBehaviour
             // if it isn't, lets set dialogue properties now
             if (DialogueManager.DiaManagerSingleton != null)
             {
-                DialogueManager.StartDialogue(text);
+                DialogueManager.StartDialogue(text, new List<GameObject> { other.gameObject });
                 previousDiaZone = this;
                 bcoll.enabled = false;
-                other.gameObject.GetComponent<Player>().enabled = false;
-                DialogueManager.DiaManagerSingleton.enabledOnEnd = other.gameObject;
+                //other.gameObject.GetComponent<Player>().enabled = false;
+                //DialogueManager.DiaManagerSingleton.enabledOnEnd = other.gameObject;
                 Invoke("RetryCollider", TIME_REACTIVATE);
             }
         }

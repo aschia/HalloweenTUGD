@@ -54,9 +54,9 @@ public class CameraActin : MonoBehaviour
     void Start()
     {
         // Test stuff
-        DialogueManager.StartDialogue(new List<string> { "Hello this is a test dialogue.", "Cool." });
-        DialogueManager.DiaManagerSingleton.enabledOnEnd = player.gameObject;
-        player.enabled = false;
+        DialogueManager.StartDialogue(new List<string> { "Hello this is a test dialogue.", "Cool." },new List<GameObject> {player.gameObject});
+        //DialogueManager.DiaManagerSingleton.enabledOnEnd = player.gameObject;
+        //player.enabled = false;
     }
 
     // Update is called once per frame

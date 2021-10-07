@@ -1,3 +1,16 @@
+/*
+ * DialogueManager
+ * 
+ * ---
+ * Dia he, dia ooo, dia ha, dia aah aah
+ * Manages dialogue stuff. It's a singleton, so don't go instantiating it or nothing. 
+ * Call it using StartDialogue(List<string> text, List<GameObject> participants)
+ * ---
+ * Last Edited: aschia (10/07)
+ * 
+ * */
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +27,9 @@ public class DialogueManager : MonoBehaviour
     public int text_index = 0;
 
     public GameObject dialogueObj = null;
-    public GameObject enabledOnEnd = null;
+    public List<GameObject> dialogueParticipants = null;
+    // ^^^ for all of the controllers that are deactivated upon starting dialogue and reactivated upon ending it
+
     public AudioClip[] sfx;
 
     public bool noiseOnType = true;
@@ -84,15 +99,25 @@ public class DialogueManager : MonoBehaviour
             text_index = 0;
             text = null;
             text_prog = "";
-            // check if the object is a player
-            if (enabledOnEnd.GetComponent<Player>() != null) {
+            // enable all controllers supplied to the dialoguemanager
+            foreach (GameObject go in dialogueParticipants)
+            {
+                DialogueActionable[] diact = go.GetComponents<DialogueActionable>();
+                Debug.Log("diact: " + diact.ToString());
+                foreach (DialogueActionable da in diact)
+                {
+                    da.enabled = true;
+                }
+            }
+            /*if (enabledOnEnd.GetComponent<Player>() != null) {
                 enabledOnEnd.GetComponent<Player>().enabled = true;
             }
             else
             {
                 enabledOnEnd.SetActive(true);
                 enabledOnEnd = null;
-            }
+            }*/
+            dialogueParticipants = null;
             return;
         }
 
@@ -291,13 +316,34 @@ public class DialogueManager : MonoBehaviour
     }
 
     // Creates a dialogue
-    public static void StartDialogue(List<string> txt)
+    public static void StartDialogue(List<string> dialogueText)
     {
         // Sets text
-        DiaManagerSingleton.text = txt;
+        DiaManagerSingleton.text = dialogueText;
         DiaManagerSingleton.text_prog = "";
         // Enable dialogue
         if (!DiaManagerSingleton.dialogueObj.activeSelf) DiaManagerSingleton.dialogueObj.SetActive(true);
+    }
+
+    // Creates a dialogue
+    public static void StartDialogue(List<string> dialogueText, List<GameObject> participants)
+    {
+        // Sets text
+        DiaManagerSingleton.text = dialogueText;
+        DiaManagerSingleton.text_prog = "";
+        // Enable dialogue
+        if (!DiaManagerSingleton.dialogueObj.activeSelf) DiaManagerSingleton.dialogueObj.SetActive(true);
+        // disable relevant controllers
+        foreach (GameObject go in participants)
+        {
+            DialogueActionable[] diact = go.GetComponents<DialogueActionable>();
+            foreach (DialogueActionable da in diact)
+            {
+                da.enabled = false;
+            }
+        }
+        // store the participants for later
+        DiaManagerSingleton.dialogueParticipants = participants;
     }
 
     // Plays sfx

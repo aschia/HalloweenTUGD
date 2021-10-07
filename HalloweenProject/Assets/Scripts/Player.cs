@@ -15,19 +15,19 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class Player : MonoBehaviour
+public class Player : DialogueActionable
 {
     private BoxCollider2D boxColl;
-    private SpriteRenderer spRend;
+    //private SpriteRenderer spRend;
 
     private Vector3 moveDelta;
-    public List<Sprite> moveSprites;
-    public int sprIndex;
+    //public List<Sprite> faceSprites;
+    //public int sprIndex;
 
     private void Start()
     {
+        if (spRend == null) spRend = transform.GetChild(0).GetComponent<SpriteRenderer>();
         boxColl = GetComponent<BoxCollider2D>();
-        spRend = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
         {
             sprIndex = newInd;
             //Debug.Log(newInd);
-            spRend.sprite = moveSprites[newInd];
+            UpdateSprite();
         }
 
         //move it move it

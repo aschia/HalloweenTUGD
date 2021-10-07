@@ -180,7 +180,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997b4b7fd7177e34fb7d53236e778d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faceSprites:
+  - {fileID: 7639128355105523608, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
+  - {fileID: -7865796279701263455, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
+  - {fileID: -5898743092609819995, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
+  sprIndex: 0
   text:
   - hello world
   - today is tuedsay
   - is good
+  defaultFace: 0
+  defaultFacePriority: 0
