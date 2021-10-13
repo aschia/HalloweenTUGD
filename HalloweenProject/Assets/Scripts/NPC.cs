@@ -91,7 +91,7 @@ public class NPC : DialogueActionable
             List<string> diaText = null;
             if (timesTalked >= dialogueText.Count) diaText = dialogueText[dialogueText.Count-1].text;
             else diaText = dialogueText[timesTalked].text;
-            DialogueManager.StartDialogue(diaText, new List<GameObject>{this.gameObject,touchPlayer.gameObject});
+            DialogueManager.StartDialogue(diaText, new List<GameObject>{this.gameObject,touchPlayer.gameObject},dialogueText[timesTalked].minigameContTriggered);
         }
     }
 

@@ -15,5 +15,6 @@ using UnityEngine;
 [System.Serializable]
 public class Diatext
 {
-    public List<string> text = null;           // the text used in the dialogue event
+    public List<string> text = null;                    // the text used in the dialogue event
+    public GameObject minigameContTriggered = null;     // minigame triggered upon talking
 }

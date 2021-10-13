@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject dialogueObj = null;
     public List<GameObject> dialogueParticipants = null;
+    public GameObject triggeredMinigame = null;
     // ^^^ for all of the controllers that are deactivated upon starting dialogue and reactivated upon ending it
 
     public AudioClip[] sfx;
@@ -99,16 +100,28 @@ public class DialogueManager : MonoBehaviour
             text_index = 0;
             text = null;
             text_prog = "";
-            // enable all controllers supplied to the dialoguemanager
-            foreach (GameObject go in dialogueParticipants)
+            // try to start minigame
+            if (triggeredMinigame != null)
             {
-                DialogueActionable[] diact = go.GetComponents<DialogueActionable>();
-                Debug.Log("diact: " + diact.ToString());
-                foreach (DialogueActionable da in diact)
-                {
-                    da.enabled = true;
-                }
+                GameObject tm = Instantiate(triggeredMinigame);
+                tm.GetComponent<Minigame>().minigameParticipants = dialogueParticipants;
             }
+            else
+            {
+                // enable all controllers supplied to the dialoguemanager
+                foreach (GameObject go in dialogueParticipants)
+                {
+                    DialogueActionable[] diact = go.GetComponents<DialogueActionable>();
+                    Debug.Log("diact: " + diact.ToString());
+                    foreach (DialogueActionable da in diact)
+                    {
+                        da.enabled = true;
+                    }
+                }
+                dialogueParticipants = null;
+            }
+            // clear minigame
+            triggeredMinigame = null;
             /*if (enabledOnEnd.GetComponent<Player>() != null) {
                 enabledOnEnd.GetComponent<Player>().enabled = true;
             }
@@ -117,7 +130,6 @@ public class DialogueManager : MonoBehaviour
                 enabledOnEnd.SetActive(true);
                 enabledOnEnd = null;
             }*/
-            dialogueParticipants = null;
             return;
         }
 
@@ -344,6 +356,28 @@ public class DialogueManager : MonoBehaviour
         }
         // store the participants for later
         DiaManagerSingleton.dialogueParticipants = participants;
+    }
+
+    // Creates a dialogue
+    public static void StartDialogue(List<string> dialogueText, List<GameObject> participants, GameObject minigame)
+    {
+        // Sets text
+        DiaManagerSingleton.text = dialogueText;
+        DiaManagerSingleton.text_prog = "";
+        // Enable dialogue
+        if (!DiaManagerSingleton.dialogueObj.activeSelf) DiaManagerSingleton.dialogueObj.SetActive(true);
+        // disable relevant controllers
+        foreach (GameObject go in participants)
+        {
+            DialogueActionable[] diact = go.GetComponents<DialogueActionable>();
+            foreach (DialogueActionable da in diact)
+            {
+                da.enabled = false;
+            }
+        }
+        // store the participants for later
+        DiaManagerSingleton.dialogueParticipants = participants;
+        if (minigame != null) DiaManagerSingleton.triggeredMinigame = minigame;
     }
 
     // Plays sfx
