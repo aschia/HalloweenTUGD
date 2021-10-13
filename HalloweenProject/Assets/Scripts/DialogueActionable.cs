@@ -14,9 +14,13 @@ using UnityEngine;
 
 public class DialogueActionable : MonoBehaviour
 {
-    public List<Sprite> faceSprites;
+    public List<SpriteAnim> anims = new List<SpriteAnim>();
     [HideInInspector]
-    public int sprIndex = 0;
+    public int sprIndex = 0;                // which sprite animation to play
+    [HideInInspector]
+    public float imgIndex = 0;                // which image of the animation to show
+    [HideInInspector]
+    public float imgSpeed = 0;              // how long between images in the animation
 
     protected SpriteRenderer spRend = null;
 
@@ -27,6 +31,14 @@ public class DialogueActionable : MonoBehaviour
 
     public void UpdateSprite()
     {
-        spRend.sprite = faceSprites[sprIndex];
+        // check for overflow
+        if (imgIndex > anims[sprIndex].images.Count) imgIndex = 0;
+
+        // get the sprite
+        int ind = (int)Mathf.Floor(imgIndex);
+        spRend.sprite = anims[sprIndex].images[ind];
+
+        // update anim speed
+        imgSpeed = anims[sprIndex].imgSpeed;
     }
 }

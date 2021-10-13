@@ -83,6 +83,10 @@ public class NPC : DialogueActionable
             // for facing left/right
             if (newScale.x != 1) spRend.gameObject.transform.localScale = newScale;
 
+            // update player stuff
+            touchPlayer.GetComponent<Player>().imgIndex = 0;
+            touchPlayer.GetComponent<Player>().UpdateSprite();
+
             // let's start the actual text stuff
             List<string> diaText = null;
             if (timesTalked >= dialogueText.Count) diaText = dialogueText[dialogueText.Count-1].text;

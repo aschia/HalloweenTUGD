@@ -46,6 +46,11 @@ public class DialogueZone : MonoBehaviour
                 DialogueManager.StartDialogue(text, new List<GameObject> { other.gameObject });
                 previousDiaZone = this;
                 bcoll.enabled = false;
+
+                // update player stuff
+                other.GetComponent<Player>().imgIndex = 0;
+                other.GetComponent<Player>().UpdateSprite();
+
                 //other.gameObject.GetComponent<Player>().enabled = false;
                 //DialogueManager.DiaManagerSingleton.enabledOnEnd = other.gameObject;
                 Invoke("RetryCollider", TIME_REACTIVATE);

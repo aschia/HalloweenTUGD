@@ -21,6 +21,7 @@ public class Player : DialogueActionable
     //private SpriteRenderer spRend;
 
     private Vector3 moveDelta;
+    public float moveSpeed = 0.5f;
     //public List<Sprite> faceSprites;
     //public int sprIndex;
 
@@ -54,13 +55,20 @@ public class Player : DialogueActionable
 
         if (newInd != -1)
         {
+            imgIndex += imgSpeed * Time.deltaTime;
+
             sprIndex = newInd;
             //Debug.Log(newInd);
             UpdateSprite();
         }
+        else if (imgIndex != 0)
+        {
+            imgIndex = 0;
+            UpdateSprite();
+        }
 
         //move it move it
-        transform.Translate(moveDelta * Time.deltaTime);
+        transform.Translate(moveDelta * moveSpeed * Time.deltaTime);
 
         /*Debug.Log(x);
         Debug.Log(y);*/

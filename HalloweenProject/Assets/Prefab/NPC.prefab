@@ -72,8 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 1556985231
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7639128355105523608, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 5134412769281432840, guid: 3658803f8a4ca7645a5d27f00b450b28, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -180,14 +180,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997b4b7fd7177e34fb7d53236e778d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faceSprites:
-  - {fileID: 7639128355105523608, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
-  - {fileID: -7865796279701263455, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
-  - {fileID: -5898743092609819995, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
+  anims:
+  - images:
+    - {fileID: 7639128355105523608, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
+    imgSpeed: 0
+  - images:
+    - {fileID: -7865796279701263455, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
+    imgSpeed: 0
+  - images:
+    - {fileID: -5898743092609819995, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
+    imgSpeed: 0
   sprIndex: 0
-  text:
-  - hello world
-  - today is tuedsay
-  - is good
+  imgIndex: 0
+  imgSpeed: 0
+  dialogueText: []
+  timesTalked: 0
   defaultFace: 0
   defaultFacePriority: 0
