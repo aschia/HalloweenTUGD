@@ -1574,6 +1574,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -5898743092609819995, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
     - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: anims.Array.data[0].images.Array.data[0]
+      value: 
+      objectReference: {fileID: 7987770116897508823, guid: 3658803f8a4ca7645a5d27f00b450b28, type: 3}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: anims.Array.data[1].images.Array.data[0]
+      value: 
+      objectReference: {fileID: -2906212892740029036, guid: 3658803f8a4ca7645a5d27f00b450b28, type: 3}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: anims.Array.data[2].images.Array.data[0]
+      value: 
+      objectReference: {fileID: 6903433170519326365, guid: 3658803f8a4ca7645a5d27f00b450b28, type: 3}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: dialogueText.Array.data[0].text.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -9441,6 +9453,14 @@ PrefabInstance:
       propertyPath: anims.Array.data[0].images.Array.data[0]
       value: 
       objectReference: {fileID: 5134412769281432840, guid: 3658803f8a4ca7645a5d27f00b450b28, type: 3}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: anims.Array.data[1].images.Array.data[0]
+      value: 
+      objectReference: {fileID: 716341698618840026, guid: 3658803f8a4ca7645a5d27f00b450b28, type: 3}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: anims.Array.data[2].images.Array.data[0]
+      value: 
+      objectReference: {fileID: 1023776345478403568, guid: 3658803f8a4ca7645a5d27f00b450b28, type: 3}
     - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: dialogueText.Array.data[0].text.Array.size
       value: 2

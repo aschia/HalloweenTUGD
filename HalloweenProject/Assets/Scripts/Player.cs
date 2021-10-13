@@ -55,6 +55,7 @@ public class Player : DialogueActionable
 
         if (newInd != -1)
         {
+            //if (sprIndex != newInd) imgIndex = 1.5f;
             imgIndex += imgSpeed * Time.deltaTime;
 
             sprIndex = newInd;
