@@ -34,7 +34,7 @@ public class CameraZone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (previousCameraZone != null) Debug.Log("prev zone: " + previousCameraZone);
+        //if (previousCameraZone != null) Debug.Log("prev zone: " + previousCameraZone);
     }
 
     // reactivate collider

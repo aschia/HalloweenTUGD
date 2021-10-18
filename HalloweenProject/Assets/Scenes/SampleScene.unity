@@ -2103,7 +2103,7 @@ MonoBehaviour:
   dialogueParticipants: []
   triggeredMinigame: {fileID: 0}
   sfx:
-  - {fileID: 8300000, guid: 4b0180d916430a1449c0f4c936c9bdf7, type: 3}
+  - {fileID: 8300000, guid: f0cd834ea9d01cb40a53d5968f5a96b8, type: 3}
   - {fileID: 8300000, guid: c4890941b745a59499e22db6f92a4b16, type: 3}
   noiseOnType: 1
 --- !u!82 &520799672
@@ -12742,17 +12742,25 @@ PrefabInstance:
       propertyPath: dialogueText.Array.data[0].minigameContTriggered
       value: 
       objectReference: {fileID: 6785536059196876284, guid: 2fa5fd50ea6cadc44a374ddeba7cd7c5, type: 3}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[1].minigameContTriggered
+      value: 
+      objectReference: {fileID: 6785536059196876284, guid: 2fa5fd50ea6cadc44a374ddeba7cd7c5, type: 3}
+    - target: {fileID: 816474264455000071, guid: e636b147315d38945971a74718ea5450, type: 3}
+      propertyPath: dialogueText.Array.data[2].minigameContTriggered
+      value: 
+      objectReference: {fileID: 6785536059196876284, guid: 2fa5fd50ea6cadc44a374ddeba7cd7c5, type: 3}
     - target: {fileID: 816474265457217444, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 816474265457217444, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.32
+      value: -0.673
       objectReference: {fileID: 0}
     - target: {fileID: 816474265457217444, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.01
+      value: 1.6620001
       objectReference: {fileID: 0}
     - target: {fileID: 816474265457217444, guid: e636b147315d38945971a74718ea5450, type: 3}
       propertyPath: m_LocalPosition.z

@@ -17,6 +17,8 @@ public class Minigame : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (minigameParticipants == null) return;
+
         // enable all controllers supplied to the dialoguemanager
         foreach (GameObject go in minigameParticipants)
         {
