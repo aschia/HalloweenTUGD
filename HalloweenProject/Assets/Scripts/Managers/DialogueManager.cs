@@ -19,7 +19,7 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     // Vars
-    public List<string> text;
+    public List<string> text = null;
     public string text_prog = "";
     public int type_chunk = 1;
     public float type_delay = 0.125f;

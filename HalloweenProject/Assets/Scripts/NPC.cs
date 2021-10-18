@@ -19,7 +19,7 @@ public class NPC : DialogueActionable
     [SerializeField]
     bool defaultFacePriority = false;   // whether or not the npc should return to their default face direction upon ending dialogue
 
-    GameObject touchPlayer = null;
+    public GameObject touchPlayer = null;
 
 
     // Start is called before the first frame update
@@ -57,8 +57,14 @@ public class NPC : DialogueActionable
     void Update()
     {
         // if it isn't, lets set dialogue properties now
-        if (touchPlayer != null && Input.GetKeyDown(KeyCode.E) && DialogueManager.DiaManagerSingleton != null && DialogueManager.DiaManagerSingleton.text == null)
+        if (touchPlayer != null && Input.GetKeyDown(KeyCode.E))
         {
+            if (DialogueManager.DiaManagerSingleton == null)
+            {
+                Debug.Log("diamanager is null, you'd better fix that");
+                return;
+            }
+            Debug.Log("abababab");
             // set up var for holding image flip upon horizontal interactiones
             int newInd = -1;
             Vector3 newScale = new Vector3(1, 1, 1);

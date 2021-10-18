@@ -15,18 +15,6 @@ public class Minigame : MonoBehaviour
 {
     public List<GameObject> minigameParticipants = null;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnDestroy()
     {
         // enable all controllers supplied to the dialoguemanager
