@@ -12,6 +12,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -22,13 +23,37 @@ public class Player : DialogueActionable
 
     private Vector3 moveDelta;
     public float moveSpeed = 0.5f;
+    public static int candyCollected = 0;
+    public Text candyText = null;
     //public List<Sprite> faceSprites;
     //public int sprIndex;
+
+    public static Player PlayerSingleton = null;
+    #region PlayerSingleton
+    void SetPlayerSingleton()
+    {
+        if (PlayerSingleton == null)
+        {
+            PlayerSingleton = this;
+        }
+        else
+        {
+            PlayerSingleton = null;
+        }
+    }
+    #endregion
 
     private void Start()
     {
         if (spRend == null) spRend = transform.GetChild(0).GetComponent<SpriteRenderer>();
         boxColl = GetComponent<BoxCollider2D>();
+    }
+
+    private void Awake()
+    {
+        SetPlayerSingleton();
+
+        if (PlayerSingleton == null) return;
     }
 
     private void FixedUpdate()
@@ -73,5 +98,11 @@ public class Player : DialogueActionable
 
         /*Debug.Log(x);
         Debug.Log(y);*/
+    }
+
+    public static void AwardCandy()
+    {
+        candyCollected++;
+        PlayerSingleton.candyText.text = "Candy collected: " + candyCollected;
     }
 }

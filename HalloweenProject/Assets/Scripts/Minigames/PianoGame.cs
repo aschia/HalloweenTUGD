@@ -113,11 +113,12 @@ public class PianoGame : Minigame
             noteIndex = -1;
             if (gameState == (int)gStates.listen)
             {
+                host.GetComponent<Image>().sprite = hostSprites[0];
                 for (int i = 0; i < hostKeys.transform.childCount; i++)
                 {
                     Transform tr = hostKeys.transform.GetChild(i);
                     tr.GetComponent<Image>().sprite = keySprites[0];
-                    host.GetComponent<Image>().sprite = hostSprites[0];
+                    plrKeys.transform.GetChild(i).GetComponent<Image>().sprite = keySprites[0];
                 }
 
                 roundTimer = gameNotes[roundIndex].time;
@@ -145,7 +146,11 @@ public class PianoGame : Minigame
                 {
                     gameState = (int)gStates.results;
                     string txt = "You Win!\n+1 Candy!";
-                    if (score >= scoreRequired) audKey.clip = result_sfx[0];
+                    if (score >= scoreRequired)
+                    {
+                        Player.AwardCandy();
+                        audKey.clip = result_sfx[0];
+                    }
                     else
                     {
                         audKey.clip = result_sfx[1];
@@ -158,6 +163,14 @@ public class PianoGame : Minigame
                 else
                 {
                     gameState = (int)gStates.listen;
+
+                    for (int i = 0; i < hostKeys.transform.childCount; i++)
+                    {
+                        Transform tr = hostKeys.transform.GetChild(i);
+                        tr.GetComponent<Image>().sprite = keySprites[0];
+                        plrKeys.transform.GetChild(i).GetComponent<Image>().sprite = keySprites[0];
+                    }
+
                     RoundSetup();
                 }
             }
@@ -231,7 +244,7 @@ public class PianoGame : Minigame
             }
             else if (gameState == (int)gStates.getready)
             {
-                int count = (int)(lastRoundTick / (roundTick * 4));
+                int count = (int)((lastRoundTick) / (roundTick));
                 Debug.Log(count);
                 gameText.GetComponent<Text>().text = "Get Ready!\n["+count+"]";
             }

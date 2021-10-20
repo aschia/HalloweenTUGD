@@ -182,13 +182,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anims:
   - images:
-    - {fileID: 7639128355105523608, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
+    - {fileID: 5134412769281432840, guid: 3658803f8a4ca7645a5d27f00b450b28, type: 3}
     imgSpeed: 0
   - images:
-    - {fileID: -7865796279701263455, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
+    - {fileID: 716341698618840026, guid: 3658803f8a4ca7645a5d27f00b450b28, type: 3}
     imgSpeed: 0
   - images:
-    - {fileID: -5898743092609819995, guid: 0293db3ea8a93cd49a1ebfdc0dd3a337, type: 3}
+    - {fileID: 1023776345478403568, guid: 3658803f8a4ca7645a5d27f00b450b28, type: 3}
     imgSpeed: 0
   sprIndex: 0
   imgIndex: 0
@@ -197,3 +197,4 @@ MonoBehaviour:
   timesTalked: 0
   defaultFace: 0
   defaultFacePriority: 0
+  touchPlayer: {fileID: 0}

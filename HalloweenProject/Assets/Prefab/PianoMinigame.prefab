@@ -999,7 +999,7 @@ MonoBehaviour:
   result_sfx:
   - {fileID: 8300000, guid: d29816c164f18ed4c8fbbfd4a1bc7e3a, type: 3}
   - {fileID: 8300000, guid: 4b0180d916430a1449c0f4c936c9bdf7, type: 3}
-  scoreRequired: 25
+  scoreRequired: 15
   keySprites:
   - {fileID: -8671795940996281098, guid: 8d1ffa6245129294ea3857f81b0059c7, type: 3}
   - {fileID: 213831881249158832, guid: 8d1ffa6245129294ea3857f81b0059c7, type: 3}
